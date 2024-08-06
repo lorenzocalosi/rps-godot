@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4fltl575e82x"]
+
+[ext_resource type="Texture2D" uid="uid://dls8gqyxm8i0w" path="res://Assets/Sprites/RPS_Gestures/Paper.png" id="1_b682f"]
+[ext_resource type="Texture2D" uid="uid://csjofgmw4h52v" path="res://Assets/Sprites/RPS_Gestures/Scissors.png" id="2_vkl7s"]
+[ext_resource type="Texture2D" uid="uid://bq4y3junx2iku" path="res://Assets/Sprites/RPS_Gestures/Rock.png" id="3_trts1"]
+[ext_resource type="Script" path="res://Scripts/InputManager.cs" id="4_s4p1s"]
+[ext_resource type="Texture2D" uid="uid://cuahs7f52uh83" path="res://Assets/Sprites/RPS_Icons/Rock.png" id="4_uhdsx"]
+[ext_resource type="Texture2D" uid="uid://dm4m0e0337rmn" path="res://Assets/Sprites/RPS_Icons/Paper.png" id="5_062l2"]
+[ext_resource type="Texture2D" uid="uid://bhw3et116jrjk" path="res://Assets/Sprites/RPS_Icons/Scissors.png" id="6_ikyi7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="CanvasLayer"]
+
+[node name="Gestures" type="Node2D" parent="CanvasLayer/CanvasGroup"]
+position = Vector2(0, 580)
+
+[node name="Paper" type="Sprite2D" parent="CanvasLayer/CanvasGroup/Gestures"]
+texture = ExtResource("1_b682f")
+
+[node name="Scissors" type="Sprite2D" parent="CanvasLayer/CanvasGroup/Gestures"]
+texture = ExtResource("2_vkl7s")
+
+[node name="Rock" type="Sprite2D" parent="CanvasLayer/CanvasGroup/Gestures"]
+texture = ExtResource("3_trts1")
+
+[node name="Icons" type="Node2D" parent="CanvasLayer/CanvasGroup"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock" type="Button" parent="CanvasLayer/CanvasGroup/Icons"]
+offset_left = -970.0
+offset_top = -260.0
+offset_right = -450.0
+offset_bottom = 260.0
+action_mode = 0
+icon = ExtResource("4_uhdsx")
+
+[node name="Paper" type="Button" parent="CanvasLayer/CanvasGroup/Icons"]
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+action_mode = 0
+icon = ExtResource("5_062l2")
+
+[node name="Scissors" type="Button" parent="CanvasLayer/CanvasGroup/Icons"]
+offset_left = 450.0
+offset_top = -260.0
+offset_right = 970.0
+offset_bottom = 260.0
+action_mode = 0
+icon = ExtResource("6_ikyi7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("4_s4p1s")
